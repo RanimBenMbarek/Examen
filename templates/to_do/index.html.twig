@@ -1,0 +1,9 @@
+{% extends 'layout.html.twig' %}
+{% block body %}
+    <h1>Liste des Todos</h1>
+    {% for cle , element in app.session.get('todos') %}
+        <ul class="list-group">
+            <li class="list-group-item">{{ cle }} => {{ element }}</li>
+        </ul>
+    {% endfor %}
+{% endblock %}

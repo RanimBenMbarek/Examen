@@ -1,0 +1,33 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Hello LoginController!{% endblock %}
+{% block body %}
+    <div class="pos-f-t">
+        <div class="collapse" id="navbarToggleExternalContent">
+            <div class="bg-dark p-4">
+                <h4 class="text-white">Collapsed content</h4>
+                <span class="text-muted">Toggleable via the navbar brand.</span>
+            </div>
+        </div>
+        <nav class="navbar navbar-dark bg-dark">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </nav>
+    </div>
+    <div class="row">
+    {% for restau in restaus %}
+    <div class="card mb-2 m-lg-2" style="width: 18rem">
+        <div class="card-body">
+            <h5 class="card-title">restau.name</h5>
+            <h6 class="card-subtitle mb-2 text-muted">restau.type</h6>
+            <a href="{{ path('app_delete',{'id':restau.id}) }}" class="card-link"><i class="bi bi-trash-fill"></i></a>
+            <a href="{{  path('app_update',{'id':restau.id})}}" class="card-link"><i class="bi bi-pencil-fill" ></i></a>
+        </div>
+    </div>
+    {% endfor %}
+    </div>
+    <div class="d-flex justify-content-center">
+    <a href="{{ path('app_add') }}"><i class="bi bi-plus-circle-fill fas fa-camera fa-10x"></i></a>
+    </div>
+{% endblock %}

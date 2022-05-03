@@ -1,0 +1,10 @@
+{% extends 'layout.html.twig' %}
+{% block body %}
+    {% for personne in personnes %}
+    <div class="row">
+        <div class="col">{{ personne.name }}</div>
+        <div class="col">{{ personne.firstname }}</div>
+        <div class="col">{{ personne.age }}</div>
+    </div>
+    {% endfor %}
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'layout.html.twig' %}
+{% block body %}
+    <table class="table">
+        <td class="table-active">name</td>
+        <td class="table-active">Firstname</td>
+        <td class="table-active">name</td>
+
+        {% for personne in tab %}
+        <tr>
+            {% if loop.index is even %}
+            <td class="table-warning">{{ personne.name }}</td>
+            <td class="table-warning">{{ personne.Firstname }}</td>
+            <td class="table-warning">{{ personne.age }}</td>
+            {% else %}
+                <td class="table-danger">{{ personne.name }}</td>
+                <td class="table-danger">{{ personne.Firstname }}</td>
+                <td class="table-danger">{{ personne.age }}</td>
+            {% endif%}
+        </tr>
+        {% endfor %}
+    </table>
+
+{% endblock %}

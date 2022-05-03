@@ -1,0 +1,25 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Hello TableauController!{% endblock %}
+
+{% block body %}
+    {% set j=0 %}
+    {% for i in tab %}
+        {% set j=j+i %}
+        <ul class="list-group">
+            <li class="list-group-item">{{ i }}</li>
+        </ul>
+    {% endfor %}
+    <h3> Min du tableau </h3>
+    {{ min(tab) }}
+    <h3> Max du tableau </h3>
+    {{ max(tab) }}
+    <h3>nbre des elements </h3>
+    {{ tab|length }}
+    <h3>Somme </h3>
+    {{ j }}
+    {% set j=j/tab|length %}
+    <h3>Moyenne</h3>
+    {{ j }}
+    <img src="{{ asset('assets/image/') ~ path | defaultImage }}" alt="">
+{% endblock %}
